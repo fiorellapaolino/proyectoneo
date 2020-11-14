@@ -15,6 +15,8 @@ from django.views.generic import ListView, DetailView, View
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
 from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile
 
+from django.shortcuts import render
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
@@ -35,6 +37,12 @@ def services(request):
     }
     return render(request, "/pags/sesiones/tarot.html", {'context': context})
 '''
+
+def services(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "tarot.html", {'context': context})
 
 def is_valid_form(values):
     valid = True
