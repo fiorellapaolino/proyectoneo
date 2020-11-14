@@ -21,13 +21,20 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def create_ref_code():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
 
-
-def products(request):
+'''
+def productos(request):
     context = {
         'items': Item.objects.all()
     }
-    return render(request, "products.html", context)
+    return render(request,
+    'pags/productos/tarots.html', {'context': context})
 
+def services(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "/pags/sesiones/tarot.html", {'context': context})
+'''
 
 def is_valid_form(values):
     valid = True
