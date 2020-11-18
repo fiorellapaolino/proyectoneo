@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Tarot</title>
-  </head>
-<body>
+{% extends "base.html" %}
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
-</body>
-</html>
+{% block content %}
+<h2>here</h2>
+{% for item in items %}
+{(item)}
+{% endfor %}
+{endblock content %}

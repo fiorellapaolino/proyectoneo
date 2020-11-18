@@ -1,5 +1,4 @@
 from django.urls import path
-from .import views
 from .views import (
     ItemDetailView,
     CheckoutView,
@@ -11,6 +10,7 @@ from .views import (
     PaymentView,
     AddCouponView,
     RequestRefundView,
+
 )
 
 app_name = 'core'
@@ -27,5 +27,4 @@ urlpatterns = [
          name='remove-single-item-from-cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
-    path(r'pags/sesiones/tarot.html', views.services, name="tarot")
 ]

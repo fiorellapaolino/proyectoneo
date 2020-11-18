@@ -15,30 +15,13 @@ from django.views.generic import ListView, DetailView, View
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm
 from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile
 
-from django.shortcuts import render
-
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def create_ref_code():
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=20))
 
-'''
-def productos(request):
-    context = {
-        'items': Item.objects.all()
-    }
-    return render(request,
-    'pags/productos/tarots.html', {'context': context})
-
-def services(request):
-    context = {
-        'items': Item.objects.all()
-    }
-    return render(request, "/pags/sesiones/tarot.html", {'context': context})
-'''
-
-def services(request):
+def tarot(request):
     context = {
         'items': Item.objects.all()
     }
