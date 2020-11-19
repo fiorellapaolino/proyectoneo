@@ -44,9 +44,9 @@
   </style>
 </head>
 
-{% include "navbar.html" %}
 
 <body>
+  {% include "navbar.html" %}
 
     <div class="mt-5 pt-4">
     {% if messages %}
@@ -67,7 +67,8 @@
     {% block extra_body %}
     {% endblock %}
 
-    {% include "footer.html" %}
+    {% include "home.html" %}
+
     {% include "scripts.html" %}
 
     {% block extra_scripts %}

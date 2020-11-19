@@ -10,7 +10,15 @@ from .views import (
     PaymentView,
     AddCouponView,
     RequestRefundView,
-
+    tarot,
+    bioneuroemocion,
+    pendulo,
+    pendulohebreo,
+    vidaspasadas,
+    sanaciones,
+    yoga,
+    astrologia,
+    runas
 )
 
 app_name = 'core'
@@ -27,5 +35,18 @@ urlpatterns = [
          name='remove-single-item-from-cart'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
+    path('pags/sesiones/tarot.html/', tarot, name='tarot'),
+    path('pags/sesiones/bioneuroemocion.html/', bioneuroemocion, name='bioneuroemocion'),
+    path('pags/sesiones/pendulo.html/', pendulo, name='pendulo'),
+    path('pags/sesiones/pendulohebreo.html/', pendulohebreo, name='pendulohebreo'),
+    path('pags/sesiones/runas.html/', runas, name='runas'),
+    path('pags/sesiones/vidaspasadas.html/', vidaspasadas, name='vidaspasadas'),
+    path('pags/sesiones/sanaciones.html/', sanaciones, name='sanaciones'),
+    path('pags/sesiones/yoga.html/', yoga, name='yoga'),
+    path('pags/sesiones/astrologia.html/', astrologia, name='astrologia')
 
-]
+
+
+
+
+    ]

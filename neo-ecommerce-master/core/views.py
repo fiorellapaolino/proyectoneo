@@ -25,7 +25,66 @@ def tarot(request):
     context = {
         'items': Item.objects.all()
     }
-    return render(request, "tarot.html", {'context': context})
+    return render(request, "pags/sesiones/tarot.html", {'context': context})
+
+def bioneuroemocion(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/bioneuroemocion.html", {'context': context})
+
+def pendulo(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/pendulo.html", {'context': context})
+def pendulohebreo(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/pendulohebreo.html", {'context': context})
+def tarot(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/tarot.html", {'context': context})
+
+def vidaspasadas(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/vidaspasadas.html", {'context': context})
+
+def sanaciones(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/sanaciones.html", {'context': context})
+
+def yoga(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/yoga.html", {'context': context})
+
+def astrologia(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/astrologia.html", {'context': context})
+
+def runas(request):
+    context = {
+        'items': Item.objects.all()
+    }
+    return render(request, "pags/sesiones/runas.html", {'context': context})
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_question_list])
+    return HttpResponse(output)
+
+# Leave the rest of the views (detail, results, vote) unchanged
 
 def is_valid_form(values):
     valid = True

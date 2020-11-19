@@ -1,8 +1,14 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 
 {% block content %}
-<h2>here</h2>
-{% for item in items %}
-{(item)}
-{% endfor %}
-{endblock content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+                {% load cart_template_tags %}
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
